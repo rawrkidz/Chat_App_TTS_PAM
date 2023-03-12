@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Telegram</string>
+    <string name="app_name">Telegram Kontol </string>
     <string name="notif">Notifikasi Nonaktif</string>
     <string name="icon_login">icon_login</string>
     <string name="icon_dream">icon_dream</string>
     <string name="send">send</string>
     <string name="share">share</string>
+    <string name="favourites">favourites</string>
+    <string name="downloads">downloads</string>
+    <string name="logout">logout</string>
+    <string name="time">time</string>
+    <string name="subscribe">subscribe</string>
+    <string name="display">display</string>
+    <string name="location">location</string>
+    <string name="accounts">accounts</string>
+    <string name="languages">languages</string>
+    <string name="arrow_rights">arrow_rights</string>
     <string name="filter_list">Saring Daftar</string>
     <string name="search">Cari</string>
     <string name="icon_bottom">Ikon Bawah</string>

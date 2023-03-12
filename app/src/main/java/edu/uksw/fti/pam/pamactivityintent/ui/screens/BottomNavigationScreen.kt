@@ -1,7 +1,6 @@
 package edu.uksw.fti.pam.pamactivityintent.ui.screens
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.shape.CircleShape
@@ -13,7 +12,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -23,10 +21,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import edu.uksw.fti.pam.pamactivityintent.CameraActivity
 import edu.uksw.fti.pam.pamactivityintent.R
-import edu.uksw.fti.pam.pamactivityintent.models.GroupViewModel
-import edu.uksw.fti.pam.pamactivityintent.models.TodosViewModel
 import edu.uksw.fti.pam.pamactivityintent.ui.BottomNavItems
 
 @Composable
@@ -37,10 +32,8 @@ fun NavigationGraph(
         navController = navController,
         startDestination = BottomNavItems.Home.screen_route
     ) {
-        val vm = TodosViewModel()
-        val vm2 = GroupViewModel()
         composable(BottomNavItems.Home.screen_route) {
-            HomeField(vm,vm2)
+            HomeField()
         }
         composable(BottomNavItems.Contact.screen_route) {
             ContactScreen()
@@ -48,9 +41,8 @@ fun NavigationGraph(
         composable(BottomNavItems.Profile.screen_route) {
             ProfileScreen()
         }
-        composable(BottomNavItems.Camera.screen_route) {
-            val lContext = LocalContext.current
-            lContext.startActivity(Intent(lContext, CameraActivity::class.java))
+        composable(BottomNavItems.Setting.screen_route) {
+            SettingScreen()
         }
     }
 }
@@ -63,7 +55,7 @@ fun BottomNavigation(
         BottomNavItems.Home,
         BottomNavItems.Contact,
         BottomNavItems.Profile,
-        BottomNavItems.Camera
+        BottomNavItems.Setting
     )
     Column(
 //        modifier = Modifier
